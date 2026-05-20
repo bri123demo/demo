@@ -350,6 +350,11 @@ td{padding:11px 16px;font-size:13px}
 .cost-bar{height:100%;border-radius:3px;transition:width .3s}
 .cost-amt{font-size:12px;font-weight:600;width:36px;text-align:right;flex-shrink:0}
 .cost-note{font-size:11px;color:#6B7280;margin-top:8px;padding-top:8px;border-top:1px solid #F3F4F6}
+
+.rail-time{font-size:18px;font-weight:600;padding:14px 14px 16px;color:#1A1A1A}
+.rail-opt{cursor:pointer;border:1px solid var(--adyen-border);border-radius:6px;overflow:hidden;transition:border-color .15s}
+.rail-opt.on{border-color:var(--cb-blue)}
+.rail-hd{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:12px 14px 0;color:#1A1A1A}
 </style>
 </head>
 <body>
@@ -965,34 +970,16 @@ td{padding:11px 16px;font-size:13px}
         <div style="font-size:12.5px;color:var(--adyen-muted);margin-bottom:14px">Payout rail for <strong id="mCount">0</strong> payouts totalling <strong id="mTotal">€0</strong></div>
         <div class="rail-grid">
           <div class="rail-opt" id="rSwift" onclick="pickRail('swift',this)">
-            <div class="rail-hd"><div style="width:8px;height:8px;border-radius:50%;border:2px solid #C8CDD6"></div>SWIFT / Correspondent</div>
-            <div class="rail-rows">
-              <div class="rail-row"><span>Cost per txn</span><span class="vbad">0.5–0.6%</span></div>
-              <div class="rail-row"><span>Settlement time</span><span class="vbad">3–7 days</span></div>
-              <div class="rail-row"><span>Availability</span><span>Banking hours</span></div>
-              <div class="rail-row"><span>FX risk</span><span class="vbad">Yes — multiple hops</span></div>
-              <div class="rail-row"><span>Merchant receives</span><span>Local fiat</span></div>
-            </div>
+            <div class="rail-hd"><div style="width:8px;height:8px;border-radius:50%;border:2px solid #C8CDD6"></div>SWIFT</div>
+            <div class="rail-time">3–7 days</div>
           </div>
           <div class="rail-opt on" id="rUsdcFiat" onclick="pickRail('usdc-fiat',this)">
-            <div class="rail-hd" style="color:var(--cb-blue)"><div style="width:8px;height:8px;border-radius:50%;background:var(--cb-blue)"></div>USDC → Instant Fiat <span style="font-size:10px;background:var(--cb-blue-bg);color:var(--cb-blue);padding:1px 6px;border-radius:10px;font-weight:600">Recommended</span></div>
-            <div class="rail-rows">
-              <div class="rail-row"><span>Cost per txn</span><span class="vgood">0.05–0.1%</span></div>
-              <div class="rail-row"><span>Settlement time</span><span class="vgood">1–3 business days</span></div>
-              <div class="rail-row"><span>Availability</span><span class="vgood">24/7/365</span></div>
-              <div class="rail-row"><span>FX risk</span><span class="vgood">Hedged at conversion</span></div>
-              <div class="rail-row"><span>Merchant receives</span><span class="vgood">Local fiat — no crypto</span></div>
-            </div>
+            <div class="rail-hd" style="color:var(--cb-blue)"><div style="width:8px;height:8px;border-radius:50%;background:var(--cb-blue)"></div>USDC → Instant Fiat</div>
+            <div class="rail-time" style="color:var(--cb-blue)">1–3 business days</div>
           </div>
           <div class="rail-opt" id="rUsdcWallet" onclick="pickRail('usdc-wallet',this)">
-            <div class="rail-hd" style="color:#6741D9"><div style="width:8px;height:8px;border-radius:50%;background:#6741D9"></div>USDC to Wallet <span style="font-size:10px;background:#F3EEFF;color:#6741D9;padding:1px 6px;border-radius:10px;font-weight:600">Hold &amp; earn</span></div>
-            <div class="rail-rows">
-              <div class="rail-row"><span>Cost per txn</span><span class="vgood">0.05–0.1%</span></div>
-              <div class="rail-row"><span>Settlement time</span><span class="vgood">&lt;10 seconds</span></div>
-              <div class="rail-row"><span>Availability</span><span class="vgood">24/7/365</span></div>
-              <div class="rail-row"><span>FX risk</span><span class="vgood">Merchant controls timing</span></div>
-              <div class="rail-row"><span>Merchant receives</span><span style="color:#6741D9;font-weight:600">USDC · ~4.2% APY</span></div>
-            </div>
+            <div class="rail-hd" style="color:#6741D9"><div style="width:8px;height:8px;border-radius:50%;background:#6741D9"></div>USDC</div>
+            <div class="rail-time" style="color:#6741D9">&lt;10 seconds</div>
           </div>
         </div>
         <div id="railNote" style="font-size:11.5px;color:var(--adyen-muted);margin-bottom:14px;padding:10px 14px;background:var(--adyen-green-bg);border-radius:6px">
