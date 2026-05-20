@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adyen × Coinbase — Demo</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -22,7 +22,7 @@
   --warn:#E65100;
   --sw:220px;
 }
-body{font-family:"DM Sans",system-ui,sans-serif;background:var(--adyen-bg);color:var(--adyen-text);font-size:13px;height:100vh;overflow:hidden}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;background:var(--adyen-bg);color:var(--adyen-text);font-size:13px;height:100vh;overflow:hidden}
 
 /* TABS */
 .tabs{display:flex;background:var(--adyen-dark);padding-left:var(--sw)}
@@ -104,7 +104,7 @@ tr.sel td{background:#F0F5FF}
 .new-pill{font-size:10px;background:var(--adyen-green-bg);color:#086D2E;padding:2px 7px;border-radius:20px;font-weight:600}
 
 /* BUTTONS */
-.btn{padding:8px 16px;border-radius:6px;font-size:12.5px;font-weight:500;cursor:pointer;border:none;font-family:"DM Sans",sans-serif;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
+.btn{padding:8px 16px;border-radius:6px;font-size:12.5px;font-weight:500;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:all .15s;display:inline-flex;align-items:center;gap:6px}
 .btn:disabled{opacity:.4;cursor:default;pointer-events:none}
 .btn-dark{background:var(--adyen-dark);color:#fff}
 .btn-dark:hover{background:var(--adyen-dark2)}
@@ -255,6 +255,101 @@ tr.sel td{background:#F0F5FF}
 .sb-foot{padding:10px 14px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:9px;flex-shrink:0}
 .sb-av{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;cursor:pointer;flex-shrink:0}
 .sb-foot-name{font-size:11.5px;color:rgba(255,255,255,.45);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ── Adyen design tokens override ── */
+:root{
+  --adyen-dark:#0F1B2D;
+  --adyen-dark2:#1A2B40;
+  --adyen-green:#0ABF53;
+  --adyen-green-bg:#F0FAF4;
+  --adyen-border:#E5E7EB;
+  --adyen-bg:#F7F7F8;
+  --adyen-text:#1A1A1A;
+  --adyen-muted:#6B7280;
+  --cb-blue:#0052FF;
+  --cb-blue-bg:#EBF0FF;
+  --success:#0ABF53;
+  --warn:#B45309;
+  --sw:220px;
+}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;}
+
+/* Cards — flat */
+.card{border-radius:6px;box-shadow:none}
+.sc{border-radius:6px;box-shadow:none}
+.co-card{border-radius:6px;box-shadow:none}
+
+/* Table — tighter, operational */
+th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:10px 16px;color:#6B7280}
+td{padding:11px 16px;font-size:13px}
+.mono{font-family:'DM Mono',monospace;font-size:12.5px}
+
+/* Badges — flatter */
+.rb{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+.rb-swift{background:#F3F4F6;color:#374151;border:1px solid #E5E7EB}
+.rb-usdc{background:#EFF6FF;color:#1D4ED8}
+.sb2{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+.sb-pend{background:#FEF9C3;color:#854D0E}
+.sb-settl{background:#F0FAF4;color:#166534}
+
+/* ISO country pill */
+.iso-pill{display:inline-flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  background:#F3F4F6;border:1px solid #E5E7EB;border-radius:3px;
+  padding:1px 5px;color:#374151;margin-right:4px}
+
+/* Brand lockup */
+.brand-lockup{display:flex;align-items:center;gap:6px;margin-right:14px}
+.brand-x{color:#D1D5DB;font-size:11px;font-weight:400}
+.brand-sep{width:1px;height:14px;background:#E5E7EB}
+
+/* Topbar */
+.topbar{height:48px}
+.env-badge{background:#0F1B2D;color:#fff;font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;letter-spacing:.04em}
+
+/* Explain banner — more subdued */
+.explain{background:#0F1B2D;border-radius:6px;padding:12px 16px}
+.explain-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:3px;letter-spacing:.04em}
+.explain-text{font-size:12px;line-height:1.65}
+
+/* Light wallet card */
+.wallet-card{
+  background:#fff !important;
+  border:1px solid #E5E7EB !important;
+  border-radius:6px !important;
+  padding:20px 22px !important;
+  color:#1A1A1A !important;
+  margin-bottom:16px !important;
+  position:relative !important;
+  overflow:visible !important;
+}
+.wallet-card::before{display:none !important}
+.wallet-bal-lbl{font-size:11px;color:#6B7280;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.wallet-bal{font-size:26px;font-weight:700;font-family:'DM Mono',monospace;margin-bottom:3px;color:#1A1A1A}
+.wallet-bal-sub{font-size:12px;color:#6B7280}
+.wallet-addr{font-size:10px;font-family:'DM Mono',monospace;color:#6B7280;margin-top:12px;
+  padding:5px 9px;background:#F7F7F8;border:1px solid #E5E7EB;border-radius:4px;display:inline-block}
+
+/* Timeline widget */
+.timeline-widget{background:#fff;border:1px solid #E5E7EB;border-radius:6px;padding:14px 20px;margin-bottom:14px}
+.tl-title{font-size:12px;font-weight:600;color:#1A1A1A;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em}
+.tl-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tl-row:last-child{margin-bottom:0}
+.tl-label{font-size:11px;color:#6B7280;width:110px;text-align:right;flex-shrink:0}
+.tl-track{flex:1;height:18px;background:#F3F4F6;border-radius:3px;position:relative}
+.tl-bar{height:100%;border-radius:3px;position:absolute;top:0;display:flex;align-items:center;padding-left:6px}
+.tl-bar-label{font-size:10px;font-weight:600;color:#fff;white-space:nowrap}
+.tl-axis{display:flex;justify-content:space-between;padding:4px 0 0 120px;font-size:9px;color:#9CA3AF;letter-spacing:.02em}
+
+/* Cost comparison widget */
+.cost-chart{padding:4px 0}
+.cost-row{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+.cost-row:last-of-type{margin-bottom:0}
+.cost-label{font-size:11px;color:#6B7280;width:72px;text-align:right;flex-shrink:0}
+.cost-track{flex:1;height:20px;background:#F3F4F6;border-radius:3px;overflow:hidden}
+.cost-bar{height:100%;border-radius:3px;transition:width .3s}
+.cost-amt{font-size:12px;font-weight:600;width:36px;text-align:right;flex-shrink:0}
+.cost-note{font-size:11px;color:#6B7280;margin-top:8px;padding-top:8px;border-top:1px solid #F3F4F6}
 </style>
 </head>
 <body>
@@ -298,6 +393,7 @@ tr.sel td{background:#F0F5FF}
   <div class="main">
     <div class="topbar">
       <div class="topbar-l">
+        <div class="brand-lockup"><span style="font-weight:700;font-size:13px;color:#1A1A1A">Adyen</span><span class="brand-x">×</span><span style="font-weight:400;font-size:13px;color:#6B7280">Coinbase</span></div><div class="brand-sep"></div>
         <div class="breadcrumb">Finance <span>/ Payouts</span></div>
       </div>
       <div class="topbar-r">
@@ -313,16 +409,52 @@ tr.sel td{background:#F0F5FF}
 
       <div class="explain">
         <span class="explain-badge">ADYEN FOR PLATFORMS · MARKETPLACE</span>
-        <div class="explain-text">GlobalMart EU is a marketplace platform on Adyen for Platforms. It collects consumer payments on behalf of connected sellers, then controls disbursement timing. <strong>Normally: SWIFT — 3–7 days, 0.5–0.6% cost per corridor.</strong> Via Coinbase Payouts API: EUR converts to USDC on Base, offramps to local fiat per market in under 10 seconds. <strong>Sellers receive local currency. Zero crypto exposure. Merchant experience unchanged.</strong></div>
+        <div class="explain-text">GlobalMart EU — Adyen for Platforms marketplace. Rail comparison for pending batch:<br>· <strong>SWIFT:</strong> 3–7 days · 0.5–0.6% per corridor · banking hours only<br>· <strong>Coinbase Payouts API:</strong> EUR → USDC → local fiat · &lt;10 seconds · 0.05–0.1% · 24/7<br>Recipients receive local currency in both cases.</div>
       </div>
 
-      <div class="stats">
-        <div class="sc"><div class="sc-lbl">Pending disbursements</div><div class="sc-val">4 <span class="arr arr-up">▲</span></div><div class="sc-sub">Across 4 seller markets</div></div>
+      <div class="stats" style="grid-template-columns:1fr 1fr 2fr">
+        <div class="sc"><div class="sc-lbl">Pending disbursements</div><div class="sc-val">4</div><div class="sc-sub">4 markets</div></div>
         <div class="sc"><div class="sc-lbl">Total volume</div><div class="sc-val">€142,800</div><div class="sc-sub">Current batch</div></div>
-        <div class="sc"><div class="sc-lbl">Est. SWIFT cost</div><div class="sc-val" style="color:var(--warn)">€713–857</div><div class="sc-sub">0.5–0.6% per txn</div></div>
-        <div class="sc"><div class="sc-lbl">Via Coinbase cost</div><div class="sc-val" style="color:var(--success)">€71–143</div><div class="sc-sub">0.05–0.1% per txn</div><div class="sc-delta">Save ~€640 on this batch</div></div>
+        <div class="sc">
+          <div class="sc-lbl" style="margin-bottom:10px">Cost comparison — current batch</div>
+          <div class="cost-chart">
+            <div class="cost-row">
+              <div class="cost-label">SWIFT</div>
+              <div class="cost-track"><div class="cost-bar" style="width:100%;background:#D1D5DB"></div></div>
+              <div class="cost-amt" style="color:#6B7280">€857</div>
+            </div>
+            <div class="cost-row">
+              <div class="cost-label">Coinbase</div>
+              <div class="cost-track"><div class="cost-bar" style="width:16.7%;background:#0ABF53"></div></div>
+              <div class="cost-amt" style="color:#0ABF53">€143</div>
+            </div>
+            <div class="cost-note">Estimated savings: €640 &nbsp;·&nbsp; 0.45% of batch</div>
+          </div>
+        </div>
       </div>
 
+      <div class="timeline-widget">
+        <div class="tl-title">Settlement time</div>
+        <div class="tl-row">
+          <div class="tl-label">Coinbase Payouts</div>
+          <div class="tl-track">
+            <div class="tl-bar" style="left:0;width:2.5%;background:#0ABF53;min-width:6px">
+              <span class="tl-bar-label" style="position:absolute;left:calc(2.5% + 8px);color:#0ABF53;white-space:nowrap;font-size:10px;font-weight:600">~10 seconds</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-label">SWIFT</div>
+          <div class="tl-track">
+            <div class="tl-bar" style="left:42.9%;width:28.6%;background:#9CA3AF">
+              <span class="tl-bar-label">3–5 days</span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-axis">
+          <span>T+0</span><span>T+1</span><span>T+2</span><span>T+3</span><span>T+4</span><span>T+5</span><span>T+6</span><span>T+7</span>
+        </div>
+      </div>
       <div class="card">
         <div class="card-hd">
           <div><div class="card-ttl">Pending seller disbursements</div><div class="card-sub">Adyen for Platforms · Select sellers to pay out</div></div>
@@ -341,28 +473,28 @@ tr.sel td{background:#F0F5FF}
             <tr id="row0"><td><div class="cb" id="chk0" onclick="toggle(0)"></div></td>
               <td><div class="mc"><div class="mc-av" style="background:linear-gradient(135deg,#FF6B6B,#FF8E53)">SK</div><div><div class="mc-n">Sakura Tech KK</div><div class="mc-s">Connected seller · Tokyo</div></div></div></td>
               <td><span class="mono">EUR 48,200.00</span></td>
-              <td><span style="font-size:15px">🇯🇵</span> JPY</td>
+              <td><span class="iso-pill">JP</span> JPY</td>
               <td><span class="rb rb-swift" id="rl0">SWIFT</span></td>
               <td id="et0" style="color:var(--adyen-muted)">3–5 days</td>
               <td><span class="sb2 sb-pend" id="st0">Pending</span></td></tr>
             <tr id="row1"><td><div class="cb" id="chk1" onclick="toggle(1)"></div></td>
               <td><div class="mc"><div class="mc-av" style="background:linear-gradient(135deg,#4ECDC4,#44B89A)">NL</div><div><div class="mc-n">Nova Labs Ltd</div><div class="mc-s">Connected seller · São Paulo</div></div></div></td>
               <td><span class="mono">EUR 31,500.00</span></td>
-              <td><span style="font-size:15px">🇧🇷</span> BRL</td>
+              <td><span class="iso-pill">BR</span> BRL</td>
               <td><span class="rb rb-swift" id="rl1">SWIFT</span></td>
               <td id="et1" style="color:var(--adyen-muted)">3–5 days</td>
               <td><span class="sb2 sb-pend" id="st1">Pending</span></td></tr>
             <tr id="row2"><td><div class="cb" id="chk2" onclick="toggle(2)"></div></td>
               <td><div class="mc"><div class="mc-av" style="background:linear-gradient(135deg,#6C63FF,#9C8BFF)">AE</div><div><div class="mc-n">Atlas eCommerce</div><div class="mc-s">Connected seller · Lagos</div></div></div></td>
               <td><span class="mono">EUR 27,400.00</span></td>
-              <td><span style="font-size:15px">🇳🇬</span> NGN</td>
+              <td><span class="iso-pill">NG</span> NGN</td>
               <td><span class="rb rb-swift" id="rl2">SWIFT</span></td>
               <td id="et2" style="color:var(--adyen-muted)">4–7 days</td>
               <td><span class="sb2 sb-pend" id="st2">Pending</span></td></tr>
             <tr id="row3"><td><div class="cb" id="chk3" onclick="toggle(3)"></div></td>
               <td><div class="mc"><div class="mc-av" style="background:linear-gradient(135deg,#F7971E,#FFD200)">VD</div><div><div class="mc-n">Volta Digital</div><div class="mc-s">Connected seller · Dubai</div></div></div></td>
               <td><span class="mono">EUR 35,700.00</span></td>
-              <td><span style="font-size:15px">🇦🇪</span> AED</td>
+              <td><span class="iso-pill">AE</span> AED</td>
               <td><span class="rb rb-swift" id="rl3">SWIFT</span></td>
               <td id="et3" style="color:var(--adyen-muted)">2–4 days</td>
               <td><span class="sb2 sb-pend" id="st3">Pending</span></td></tr>
@@ -436,6 +568,7 @@ tr.sel td{background:#F0F5FF}
   <div class="main">
     <div class="topbar">
       <div class="topbar-l">
+        <div class="brand-lockup"><span style="font-weight:700;font-size:13px;color:#1A1A1A">Adyen</span><span class="brand-x">×</span><span style="font-weight:400;font-size:13px;color:#6B7280">Coinbase</span></div><div class="brand-sep"></div>
         <div class="breadcrumb">Finance <span>/ Settlement</span></div>
       </div>
       <div class="topbar-r">
@@ -450,7 +583,7 @@ tr.sel td{background:#F0F5FF}
 
       <div class="explain">
         <span class="explain-badge">DIRECT MERCHANT · SETTLEMENT PREFERENCE</span>
-        <div class="explain-text">Adidas is a direct Adyen merchant — not a platform sub-merchant. After each settlement cycle, Adyen pays out net revenue. Via Coinbase, Adidas can choose: <strong>convert to fiat (EUR to bank)</strong> as normal, or <strong>keep as USDC</strong> in a Coinbase custodial wallet provisioned by Adyen. The wallet holds the balance, earns yield, and lets Adidas convert on their schedule.</div>
+        <div class="explain-text">Adidas AG — direct Adyen merchant. Settlement options per cycle:<br>· <strong>Convert to EUR:</strong> SEPA transfer to nominated IBAN · 1–2 business days<br>· <strong>Hold as USDC:</strong> credit to Coinbase custodial wallet · &lt;10 seconds · ~4.2% APY on balance · convert on demand</div>
       </div>
 
       <!-- Sub-tabs: Settlement choice vs Wallet -->
@@ -510,20 +643,20 @@ tr.sel td{background:#F0F5FF}
           <div>
             <div class="wallet-card">
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-                <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff">AD</div>
+                <div style="width:32px;height:32px;border-radius:7px;background:#F3F4F6;border:1px solid #E5E7EB;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#1A1A1A">AD</div>
                 <div>
-                  <div style="font-size:13px;font-weight:600;color:#fff">Adidas AG</div>
-                  <div style="font-size:10px;color:rgba(255,255,255,.4)">Coinbase Custodial Wallet</div>
+                  <div style="font-size:13px;font-weight:600;color:#1A1A1A">Adidas AG</div>
+                  <div style="font-size:10px;color:#6B7280">Custodial Wallet · Coinbase</div>
                 </div>
-                <div style="margin-left:auto;font-size:10px;background:rgba(10,191,83,.2);color:#0ABF53;padding:3px 8px;border-radius:20px;font-weight:600">LIVE</div>
+                <div style="margin-left:auto;font-size:10px;background:#F0FAF4;color:#0ABF53;border:1px solid #BBF7D0;padding:3px 8px;border-radius:4px;font-weight:600">LIVE</div>
               </div>
               <div class="wallet-bal-lbl">Total balance</div>
               <div class="wallet-bal" id="walletBal">2,634,050.00 USDC</div>
               <div class="wallet-bal-sub" id="walletFiat">≈ EUR 2,847,300 · Rate: 1 USDC = 1.0808 EUR</div>
               <div style="margin-top:14px;display:flex;gap:8px">
-                <div style="background:rgba(10,191,83,.12);border-radius:6px;padding:6px 10px;font-size:10px;color:#0ABF53;font-weight:600">+4.2% APY</div>
-                <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 10px;font-size:10px;color:rgba(255,255,255,.5)">MiCA compliant</div>
-                <div style="background:rgba(255,255,255,.06);border-radius:6px;padding:6px 10px;font-size:10px;color:rgba(255,255,255,.5)">SOC 2</div>
+                <div style="background:#F0FAF4;border:1px solid #BBF7D0;border-radius:4px;padding:4px 9px;font-size:10px;color:#0ABF53;font-weight:600">+4.2% APY</div>
+                <div style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:4px 9px;font-size:10px;color:#6B7280;font-weight:500">MiCA compliant</div>
+                <div style="background:#F3F4F6;border:1px solid #E5E7EB;border-radius:4px;padding:4px 9px;font-size:10px;color:#6B7280;font-weight:500">SOC 2</div>
               </div>
               <div class="wallet-addr">0x4a3f9c...c8e2 · Base L2</div>
             </div>
